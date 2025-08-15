@@ -1,0 +1,33 @@
+{
+    "appId": "com.1001api.vod",
+    "productName": "Video On Demand",
+    "artifactName": "${productName}-${arch}.${ext}",
+    "directories": {
+        "output": "release",
+        "buildResources": "src/assets/"
+    },
+    "files": [
+        "dist/**",
+        "src/electron.cjs",
+        "src/preload.cjs",
+        "package.json",
+        "!**/node_modules/*/{test,__tests__,example,examples}",
+        "!**/*.map"
+    ],
+    "asar": true,
+    "asarUnpack": [
+        "**/*.node"
+    ],
+    "extraResources": [
+        {
+            "from": "node_modules/electron/dist/locales/en-US.pak",
+            "to": "locales/en-US.pak"
+        }
+    ],
+    "win": {
+        "target": [
+            "portable"
+        ],
+        "icon": "src/assets/min.png"
+    }
+}
