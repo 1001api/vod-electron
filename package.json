@@ -1,0 +1,46 @@
+{
+  "name": "vod",
+  "description": "Video On Demand",
+  "author": "1001API.com",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/electron.cjs",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev npm run dev:all",
+    "dev:all": "concurrently -n=svelte,electron -c='#ff3e00',blue \"npm run dev:svelte\" \"npm run dev:electron\"",
+    "dev:svelte": "vite dev",
+    "dev:electron": "electron src/electron.cjs",
+    "build:w32": "cross-env NODE_ENV=production npm run build:svelte && npm run electron:w32",
+    "build:w64": "cross-env NODE_ENV=production npm run build:svelte && npm run electron:w64",
+    "build:svelte": "vite build",
+    "svelte:start": "vite start",
+    "electron:w32": "electron-builder -w --ia32 --config build.config.json",
+    "electron:w64": "electron-builder -w --x64 --config build.config.json"
+  },
+  "devDependencies": {
+    "@skeletonlabs/skeleton": "^3.1.8",
+    "@skeletonlabs/skeleton-svelte": "^1.4.0",
+    "@sveltejs/vite-plugin-svelte": "^6.1.1",
+    "@tsconfig/svelte": "^5.0.4",
+    "concurrently": "^9.2.0",
+    "cross-env": "^10.0.0",
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "svelte": "^5.38.1",
+    "svelte-check": "^4.3.1",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "electron-reloader": "^1.2.3",
+    "electron-serve": "^2.1.1",
+    "@lucide/svelte": "^0.539.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "electron-window-state": "^5.0.3",
+    "svelte-infinite": "^0.5.0",
+    "svelte-spa-router": "^4.0.1",
+    "tailwindcss": "^4.1.12",
+    "vidstack": "^1.12.13"
+  }
+}
