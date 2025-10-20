@@ -4,7 +4,6 @@
 
 A modern **Video On Demand (VOD)** desktop application built with Electron, Svelte 5, and TypeScript. Browse, search, and stream thousands of movies and TV shows with a beautiful, cinematic user interface.
 
-![License](https://img.shields.io/badge/license-Private-blue)
 ![Electron](https://img.shields.io/badge/Electron-37.2.6-47848F?logo=electron)
 ![Svelte](https://img.shields.io/badge/Svelte-5.38.1-FF3E00?logo=svelte)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?logo=typescript)
